@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Promotions & Billboard Offers | Apex Hypermotors</title>
+  <meta name="description" content="Exclusive supercar promotions, seasonal track packages, zero percent APR financing, and VIP club concierge rewards.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg apex-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <i class="fas fa-bolt brand-icon"></i>
+        <span>APEX <span class="apex">HYPERMOTORS</span></span>
+      </a>
+
+      <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html"><i class="fas fa-car me-1"></i> Store (สินค้า)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="promotions.html"><i class="fas fa-tags me-1"></i> Promotions (โปรโมชัน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html"><i class="fas fa-clipboard-list me-1"></i> Order (สั่งซื้อ)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html"><i class="fas fa-credit-card me-1"></i> Payment (การชำระเงิน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> Contact (ติดต่อเรา)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html"><i class="fas fa-star me-1"></i> Reviews (ความคิดเห็น)</a>
+          </li>
+        </ul>
+
+        <!-- Fake Wallet Badge -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="payment.html" class="wallet-pill text-decoration-none">
+            <span class="wallet-dot"></span>
+            <i class="fas fa-wallet"></i>
+            <span id="navbar-wallet-amount">$999,999,999,999,999</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PROMOTIONS BILLBOARD HEADER -->
+  <header class="py-5" style="background: linear-gradient(180deg, #161825 0%, #0a0b10 100%); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container text-center">
+      <span class="promo-tag mb-3"><i class="fas fa-certificate"></i> Exclusive Seasonal Allocations</span>
+      <h1 class="display-5 font-heading text-white fw-bold mb-2">Billboard Promotions & VIP Perks</h1>
+      <p class="text-muted mx-auto" style="max-width: 650px;">
+        Take advantage of limited-run hypercar allocations with complimentary circuit packages, bespoke carbon finishes, and simulated zero-fee pocket money checkout.
+      </p>
+    </div>
+  </header>
+
+  <!-- PROMOTIONS CONTENT -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- HERO PROMOTION CARD -->
+      <div class="billboard-card mb-5">
+        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1600&q=80" alt="AMG ONE Promo" class="billboard-bg-img">
+        <div class="billboard-inner">
+          <div class="col-lg-7">
+            <span class="badge bg-danger mb-2 px-3 py-1 text-uppercase letter-spacing-1">Limited Track Special</span>
+            <h2 class="display-6 font-heading text-white fw-bold mb-3">
+              Mercedes-AMG ONE + F1 Pit Crew Experience
+            </h2>
+            <p class="billboard-desc">
+              Purchase the Mercedes-AMG ONE through your App Pocket Money and receive an all-inclusive VIP pass to the Monaco Grand Prix paddock with private pit lane garage tour.
+            </p>
+            <div class="d-flex align-items-center gap-3">
+              <span class="promo-code-badge" onclick="navigator.clipboard.writeText('APEXF1MONACO'); showToast('Promo code copied: APEXF1MONACO', 'success');">
+                <i class="fas fa-copy me-1"></i> CODE: APEXF1MONACO
+              </span>
+              <button onclick="openOrderModal('mercedes-amg-one')" class="btn btn-apex-crimson">
+                <i class="fas fa-bolt me-1"></i> Claim Promotion
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMOTION GRID -->
+      <div class="row g-4">
+        
+        <!-- Promo 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="promo-card">
+            <span class="promo-tag mb-3"><i class="fas fa-shield-alt"></i> 0% APR Financing</span>
+            <h4 class="text-white font-heading mb-2">BMW M8 Competition Gran Coupe</h4>
+            <p class="text-muted small mb-4">
+              Zero percent simulated financing for 48 months with 5 years free factory track maintenance and ceramic brake pad replacement.
+            </p>
+            <div class="mt-auto pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <span class="text-warning fw-bold font-heading">$890,000</span>
+              <button onclick="openOrderModal('bmw-m8-competition')" class="btn btn-sm btn-apex-gold">
+                Order Promo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="promo-card">
+            <span class="promo-tag mb-3" style="background: rgba(0, 210, 255, 0.15); border-color: rgba(0,210,255,0.4); color: #00d2ff;">
+              <i class="fas fa-bolt"></i> EV Supercharge Bundle
+            </span>
+            <h4 class="text-white font-heading mb-2">Tesla Roadster Founder Series</h4>
+            <p class="text-muted small mb-4">
+              Complimentary home supercharger installation, SpaceX thruster cold-gas warranty, and unlimited lifetime high-speed charging.
+            </p>
+            <div class="mt-auto pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <span class="text-warning fw-bold font-heading">$1,500,000</span>
+              <button onclick="openOrderModal('tesla-roadster')" class="btn btn-sm btn-apex-gold">
+                Order Promo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="promo-card">
+            <span class="promo-tag mb-3"><i class="fas fa-flag-checkered"></i> Nürburgring Package</span>
+            <h4 class="text-white font-heading mb-2">Nissan GT-R NISMO Edition</h4>
+            <p class="text-muted small mb-4">
+              Get an exclusive Bilstein track suspension upgrade kit and 3 complimentary Nürburgring Nordschleife private test session entries.
+            </p>
+            <div class="mt-auto pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <span class="text-warning fw-bold font-heading">$820,000</span>
+              <button onclick="openOrderModal('nissan-gtr-nismo')" class="btn btn-sm btn-apex-gold">
+                Order Promo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="promo-card">
+            <span class="promo-tag mb-3"><i class="fas fa-gem"></i> Heritage Special</span>
+            <h4 class="text-white font-heading mb-2">Ford GT Liquid Carbon</h4>
+            <p class="text-muted small mb-4">
+              Custom Gulf Racing livery application included at no extra charge. Bespoke handcrafted luggage set matched to car carbon weave.
+            </p>
+            <div class="mt-auto pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <span class="text-warning fw-bold font-heading">$2,150,000</span>
+              <button onclick="openOrderModal('ford-gt-carbon')" class="btn btn-sm btn-apex-gold">
+                Order Promo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="promo-card">
+            <span class="promo-tag mb-3"><i class="fas fa-fire"></i> Farewell V10 Edition</span>
+            <h4 class="text-white font-heading mb-2">Audi R8 V10 GT RWD</h4>
+            <p class="text-muted small mb-4">
+              Numbered collector plaque with bespoke Alcantara steering wheel and Akrapovic titanium race exhaust pre-installed.
+            </p>
+            <div class="mt-auto pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <span class="text-warning fw-bold font-heading">$1,250,000</span>
+              <button onclick="openOrderModal('audi-r8-gt')" class="btn btn-sm btn-apex-gold">
+                Order Promo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="promo-card">
+            <span class="promo-tag mb-3"><i class="fas fa-trophy"></i> JDM Trophy Special</span>
+            <h4 class="text-white font-heading mb-2">Toyota GR Supra GT4 100</h4>
+            <p class="text-muted small mb-4">
+              Includes custom Gazoo Racing carbon front canards and high-downforce GT wing, plus 1 set of Michelin Pilot Sport Cup 2 R tires.
+            </p>
+            <div class="mt-auto pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+              <span class="text-warning fw-bold font-heading">$490,000</span>
+              <button onclick="openOrderModal('toyota-gr-supra-gt4')" class="btn btn-sm btn-apex-gold">
+                Order Promo
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="apex-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3">
+            <i class="fas fa-bolt brand-icon"></i>
+            <span>APEX <span class="apex">HYPERMOTORS</span></span>
+          </div>
+          <p class="small text-muted mb-3">
+            VIP billboard promotions, track bundles, and supercar allocations.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Pages (เมนู)</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Home (หน้าแรก)</a></li>
+            <li><a href="store.html" class="footer-link">Store (สินค้า)</a></li>
+            <li><a href="promotions.html" class="footer-link">Promotions (โปรโมชัน)</a></li>
+            <li><a href="order.html" class="footer-link">Order (สั่งซื้อ)</a></li>
+            <li><a href="payment.html" class="footer-link">Payment (ชำระเงิน)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Support</h6>
+          <ul class="list-unstyled small">
+            <li><a href="contact.html" class="footer-link">Contact Us (ติดต่อเรา)</a></li>
+            <li><a href="reviews.html" class="footer-link">Reviews (ความคิดเห็น)</a></li>
+            <li><a href="#" onclick="resetWalletBalance(); return false;" class="footer-link text-warning">Reset Fake Money</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-white font-heading text-uppercase mb-3">Homework Submission</h6>
+          <p class="small text-muted mb-1">Subject: Web Application Development</p>
+          <p class="small text-muted mb-1">Package: Assignment-MyJS-BT-Webpage</p>
+          <p class="small text-muted">Feature: Promotions page with billboard promo codes and bundle perks</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
+        &copy; 2026 Apex Hypermotors. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Data & Scripts -->
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

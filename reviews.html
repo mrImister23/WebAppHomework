@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Reviews & Feedback | Apex Hypermotors</title>
+  <meta name="description" content="Verified supercar collector reviews and feedback. Read experiences from owners of Ferrari, Mercedes-AMG, BYD, Porsche, and submit your own rating.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg apex-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <i class="fas fa-bolt brand-icon"></i>
+        <span>APEX <span class="apex">HYPERMOTORS</span></span>
+      </a>
+
+      <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html"><i class="fas fa-car me-1"></i> Store (สินค้า)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="promotions.html"><i class="fas fa-tags me-1"></i> Promotions (โปรโมชัน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html"><i class="fas fa-clipboard-list me-1"></i> Order (สั่งซื้อ)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html"><i class="fas fa-credit-card me-1"></i> Payment (การชำระเงิน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> Contact (ติดต่อเรา)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="reviews.html"><i class="fas fa-star me-1"></i> Reviews (ความคิดเห็น)</a>
+          </li>
+        </ul>
+
+        <!-- Fake Wallet Badge -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="payment.html" class="wallet-pill text-decoration-none">
+            <span class="wallet-dot"></span>
+            <i class="fas fa-wallet"></i>
+            <span id="navbar-wallet-amount">$999,999,999,999,999</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- REVIEWS HEADER -->
+  <header class="py-5 text-center" style="background: linear-gradient(180deg, #151824 0%, #0a0b10 100%); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <span class="promo-tag mb-3"><i class="fas fa-award"></i> Verified Collector Voices</span>
+      <h1 class="display-5 font-heading text-white fw-bold mb-2">Owner Reviews & Experiences</h1>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        Read firsthand reviews from hypercar enthusiasts who acquired their vehicles via our concierge and App Pocket Money system.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN REVIEWS CONTENT -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- TOP RATING HIGHLIGHT SCORECARD -->
+      <div class="p-4 rounded-4 mb-5" style="background: var(--bg-card); border: 1px solid var(--border-subtle);">
+        <div class="row g-4 align-items-center text-center text-md-start">
+          <div class="col-md-4 text-center border-end border-secondary border-opacity-25">
+            <div class="display-3 font-heading text-warning fw-bold mb-0" id="reviews-avg-rating">5.0</div>
+            <div class="text-warning fs-5 mb-1">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <small class="text-muted">Based on <strong id="reviews-total-count" class="text-white">4</strong> Verified Collector Reviews</small>
+          </div>
+
+          <div class="col-md-8">
+            <h5 class="text-white font-heading mb-2">Unmatched Satisfaction Across All Marques</h5>
+            <p class="text-muted small mb-3">
+              100% of verified clients praise our zero-lag allocation workflow, realistic fake currency testing suite, and white-glove transport logistics.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-dark border border-secondary text-warning px-3 py-2"><i class="fas fa-check me-1"></i> 100% Concierge Accuracy</span>
+              <span class="badge bg-dark border border-secondary text-warning px-3 py-2"><i class="fas fa-bolt me-1"></i> Instant Allocation</span>
+              <span class="badge bg-dark border border-secondary text-warning px-3 py-2"><i class="fas fa-shield-alt me-1"></i> Factory Authenticated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5">
+        
+        <!-- LEFT: REVIEWS LIST -->
+        <div class="col-lg-7">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="font-heading text-white h4 mb-0"><i class="fas fa-comments text-warning me-2"></i>Collector Testimonials</h3>
+            <span class="small text-muted">Chronological Order</span>
+          </div>
+
+          <div id="reviews-list">
+            <!-- Dynamically populated via reviews.js -->
+          </div>
+        </div>
+
+        <!-- RIGHT: SUBMIT REVIEW FORM -->
+        <div class="col-lg-5">
+          <div class="p-4 p-md-5 rounded-4 sticky-top" style="top: 100px; background: var(--bg-card); border: 1px solid var(--border-gold); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);">
+            <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-secondary border-opacity-25">
+              <h4 class="font-heading text-white mb-0">Share Your Experience</h4>
+              <span class="badge bg-warning text-dark"><i class="fas fa-pencil-alt me-1"></i> Write Review</span>
+            </div>
+
+            <form id="review-submission-form">
+              <!-- Star Picker -->
+              <div class="mb-4 text-center">
+                <label class="form-label small text-muted d-block mb-2">Select Your Rating</label>
+                <div class="star-rating-select" id="star-picker">
+                  <i class="fas fa-star active" data-rating="1"></i>
+                  <i class="fas fa-star active" data-rating="2"></i>
+                  <i class="fas fa-star active" data-rating="3"></i>
+                  <i class="fas fa-star active" data-rating="4"></i>
+                  <i class="fas fa-star active" data-rating="5"></i>
+                </div>
+              </div>
+
+              <!-- Name input -->
+              <div class="mb-3">
+                <label class="form-label small text-muted">Your Name / Title</label>
+                <input type="text" id="review-author-name" class="form-control form-control-dark" required placeholder="e.g. Lord Harrington or Jane Doe">
+              </div>
+
+              <!-- Supercar select -->
+              <div class="mb-3">
+                <label class="form-label small text-muted">Supercar Model</label>
+                <select id="review-car-select" class="form-select form-select-dark">
+                  <!-- Populated from cars database -->
+                </select>
+              </div>
+
+              <!-- Comment textarea -->
+              <div class="mb-4">
+                <label class="form-label small text-muted">Your Feedback / Review</label>
+                <textarea id="review-text" class="form-control form-control-dark" rows="4" required placeholder="Describe your experience with the car, delivery, and online ordering flow..."></textarea>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-apex-gold btn-lg w-100 font-heading">
+                <i class="fas fa-paper-plane me-2"></i> Publish Review
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="apex-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3">
+            <i class="fas fa-bolt brand-icon"></i>
+            <span>APEX <span class="apex">HYPERMOTORS</span></span>
+          </div>
+          <p class="small text-muted mb-3">
+            Community of passionate hypercar enthusiasts and collectors sharing feedback.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Pages (เมนู)</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Home (หน้าแรก)</a></li>
+            <li><a href="store.html" class="footer-link">Store (สินค้า)</a></li>
+            <li><a href="promotions.html" class="footer-link">Promotions (โปรโมชัน)</a></li>
+            <li><a href="order.html" class="footer-link">Order (สั่งซื้อ)</a></li>
+            <li><a href="payment.html" class="footer-link">Payment (ชำระเงิน)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Support</h6>
+          <ul class="list-unstyled small">
+            <li><a href="contact.html" class="footer-link">Contact Us (ติดต่อเรา)</a></li>
+            <li><a href="reviews.html" class="footer-link">Reviews (ความคิดเห็น)</a></li>
+            <li><a href="#" onclick="resetWalletBalance(); return false;" class="footer-link text-warning">Reset Fake Money</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-white font-heading text-uppercase mb-3">Homework Submission</h6>
+          <p class="small text-muted mb-1">Subject: Web Application Development</p>
+          <p class="small text-muted mb-1">Package: Assignment-MyJS-BT-Webpage</p>
+          <p class="small text-muted">Feature: Reviews & comment system with interactive star rating</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
+        &copy; 2026 Apex Hypermotors. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Data & Scripts -->
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateway | Apex Hypermotors</title>
+  <meta name="description" content="Secure payment gateway with simulated fake money balance ($999,999,999,999,999) or credit card authorization.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg apex-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <i class="fas fa-bolt brand-icon"></i>
+        <span>APEX <span class="apex">HYPERMOTORS</span></span>
+      </a>
+
+      <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html"><i class="fas fa-car me-1"></i> Store (สินค้า)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="promotions.html"><i class="fas fa-tags me-1"></i> Promotions (โปรโมชัน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html"><i class="fas fa-clipboard-list me-1"></i> Order (สั่งซื้อ)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="payment.html"><i class="fas fa-credit-card me-1"></i> Payment (การชำระเงิน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> Contact (ติดต่อเรา)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html"><i class="fas fa-star me-1"></i> Reviews (ความคิดเห็น)</a>
+          </li>
+        </ul>
+
+        <!-- Fake Wallet Badge -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="payment.html" class="wallet-pill text-decoration-none">
+            <span class="wallet-dot"></span>
+            <i class="fas fa-wallet"></i>
+            <span id="navbar-wallet-amount">$999,999,999,999,999</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAYMENT MAIN SECTION -->
+  <main class="py-5">
+    <div class="container">
+      
+      <!-- CHECKOUT STEPS VIEW -->
+      <div id="checkout-steps-container">
+        
+        <!-- FAKE MONEY BANNER (Highlighting the fake balance feature) -->
+        <div class="fake-wallet-banner d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="badge bg-success"><i class="fas fa-check-circle me-1"></i> SIMULATED TEST ENVIRONMENT</span>
+              <span class="text-warning small fw-bold">Fake Money Mode Active</span>
+            </div>
+            <h4 class="text-white font-heading mb-1">App Pocket Money Balance: <span id="payment-pocket-balance" class="text-warning">$999,999,999,999,999</span></h4>
+            <p class="text-muted small mb-0">No real funds are charged. Experience instant hypercar acquisition with realistic fake digital currency.</p>
+          </div>
+          <div>
+            <button id="btn-reset-wallet-payment" class="btn btn-sm btn-apex-outline text-warning">
+              <i class="fas fa-redo me-1"></i> Reset to $999,999,999,999,999
+            </button>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          
+          <!-- LEFT: PAYMENT METHOD OPTIONS -->
+          <div class="col-lg-7">
+            <div class="payment-box">
+              <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-secondary border-opacity-25">
+                <h3 class="font-heading text-white h4 mb-0"><i class="fas fa-shield-alt text-warning me-2"></i>Select Payment Method</h3>
+                <span class="small text-muted">Encrypted 256-bit SSL</span>
+              </div>
+
+              <!-- Payment Tabs (Only 2 methods: App Pocket Money or Credit Card as requested) -->
+              <ul class="nav nav-pills mb-4 gap-2" id="paymentMethodTabs" role="tablist">
+                <li class="nav-item flex-grow-1" role="presentation">
+                  <button class="nav-link active w-100 text-center py-3 border border-secondary border-opacity-25 text-white" id="pills-pocket-tab" data-bs-toggle="pill" data-bs-target="#tab-pocket-money" type="button" role="tab">
+                    <i class="fas fa-wallet text-warning fs-4 d-block mb-1"></i>
+                    <span class="fw-bold">App Pocket Money</span>
+                    <small class="d-block text-muted" style="font-size: 0.75rem;">(Fake Money Balance)</small>
+                  </button>
+                </li>
+                <li class="nav-item flex-grow-1" role="presentation">
+                  <button class="nav-link w-100 text-center py-3 border border-secondary border-opacity-25 text-white" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#tab-credit-card" type="button" role="tab">
+                    <i class="fas fa-credit-card text-primary fs-4 d-block mb-1"></i>
+                    <span class="fw-bold">Credit / Debit Card</span>
+                    <small class="d-block text-muted" style="font-size: 0.75rem;">(Simulated Card)</small>
+                  </button>
+                </li>
+              </ul>
+
+              <!-- Tab Contents -->
+              <div class="tab-content" id="paymentTabContent">
+                
+                <!-- 1. APP POCKET MONEY (FAKE MONEY) TAB -->
+                <div class="tab-pane fade show active" id="tab-pocket-money" role="tabpanel">
+                  <div class="p-4 rounded-3 mb-4" style="background: rgba(229, 185, 76, 0.05); border: 1px dashed var(--border-gold);">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <span class="text-muted">Current App Pocket Balance:</span>
+                      <strong class="text-white fs-5 font-heading">$999,999,999,999,999</strong>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3 text-warning">
+                      <span>Deduction Amount:</span>
+                      <strong class="fs-5 font-heading" id="pocket-pay-btn-amount">$0</strong>
+                    </div>
+                    <hr class="border-secondary opacity-25">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="text-muted">Remaining Balance After Order:</span>
+                      <strong class="text-success fs-5 font-heading" id="payment-pocket-after">Calculating...</strong>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="form-check">
+                      <input class="form-check-input bg-dark border-secondary" type="checkbox" id="termsCheck1" checked>
+                      <label class="form-check-label text-muted small" for="termsCheck1">
+                        I authorize instant deduction from my App Pocket Money fake balance.
+                      </label>
+                    </div>
+                  </div>
+
+                  <button id="btn-pay-pocket" class="btn btn-apex-gold btn-lg w-100 py-3 font-heading fs-5">
+                    <i class="fas fa-lock me-2"></i> Pay with App Pocket Money
+                  </button>
+                </div>
+
+                <!-- 2. CREDIT CARD TAB -->
+                <div class="tab-pane fade" id="tab-credit-card" role="tabpanel">
+                  
+                  <!-- Virtual Credit Card Preview -->
+                  <div class="p-4 rounded-4 mb-4 text-white shadow" style="background: linear-gradient(135deg, #1f2330 0%, #0d0f17 100%); border: 1px solid var(--border-gold); min-height: 180px;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                      <span class="font-heading fw-bold letter-spacing-1 text-warning">APEX BLACK CARD</span>
+                      <i class="fab fa-cc-visa fa-2x text-light"></i>
+                    </div>
+                    <div class="fs-4 font-heading letter-spacing-2 mb-3" id="card-preview-number">•••• •••• •••• ••••</div>
+                    <div class="d-flex justify-content-between small text-muted">
+                      <div>
+                        <span class="d-block" style="font-size: 0.65rem;">CARDHOLDER</span>
+                        <span class="text-white fw-bold" id="card-preview-name">VALUED CLIENT</span>
+                      </div>
+                      <div>
+                        <span class="d-block" style="font-size: 0.65rem;">EXPIRES</span>
+                        <span class="text-white fw-bold" id="card-preview-expiry">12/28</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card Input Form -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <label class="form-label small text-muted">Cardholder Full Name</label>
+                      <input type="text" id="input-card-name" class="form-control form-control-dark" placeholder="e.g. Alex Morgan" value="Alex Morgan">
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label small text-muted">Card Number (Mock)</label>
+                      <input type="text" id="input-card-number" class="form-control form-control-dark" placeholder="4111 2222 3333 4444" value="4532 9821 3410 8899" maxlength="19">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label small text-muted">Expiration Date</label>
+                      <input type="text" id="input-card-expiry" class="form-control form-control-dark" placeholder="MM/YY" value="08/29" maxlength="5">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label small text-muted">CVV / Security Code</label>
+                      <input type="password" id="input-card-cvv" class="form-control form-control-dark" placeholder="3-4 digits" value="789" maxlength="4">
+                    </div>
+                  </div>
+
+                  <button id="btn-pay-card" class="btn btn-apex-crimson btn-lg w-100 py-3 font-heading fs-5">
+                    <i class="fas fa-lock me-2"></i> Authorize Payment (<span id="card-pay-btn-amount">$0</span>)
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT: ORDER SUMMARY -->
+          <div class="col-lg-5">
+            <div class="payment-box">
+              <h4 class="font-heading text-white mb-3">Order Allocation</h4>
+              
+              <!-- Car Preview Card in Summary -->
+              <div class="d-flex gap-3 align-items-center p-3 rounded-3 mb-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                <img id="summary-car-img" src="" alt="Selected Supercar" class="rounded-2" style="width: 100px; height: 70px; object-fit: cover;">
+                <div>
+                  <span class="badge bg-secondary mb-1" id="summary-car-brand">Brand</span>
+                  <h6 class="text-white mb-1 font-heading" id="summary-car-name">Supercar</h6>
+                  <div class="d-flex align-items-center gap-2 small text-muted">
+                    <span>Color:</span>
+                    <span id="summary-color-dot" class="d-inline-block rounded-circle" style="width: 12px; height: 12px; background: #fff;"></span>
+                    <span id="summary-color-name" class="text-white">Selected Color</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div class="d-flex flex-column gap-2 mb-4 pb-3 border-bottom border-secondary border-opacity-25 small">
+                <div class="d-flex justify-content-between text-muted">
+                  <span>Allocation Reference:</span>
+                  <span class="text-white font-monospace" id="summary-order-id">APX-000000</span>
+                </div>
+                <div class="d-flex justify-content-between text-muted">
+                  <span>Base Vehicle Price:</span>
+                  <span class="text-white" id="summary-base-price">$0</span>
+                </div>
+                <div class="d-flex justify-content-between text-muted">
+                  <span>Luxury Import Duty:</span>
+                  <span class="text-success" id="summary-tax">$0 (Waived)</span>
+                </div>
+                <div class="d-flex justify-content-between text-muted">
+                  <span>Showroom Concierge Delivery:</span>
+                  <span class="text-success">Complimentary</span>
+                </div>
+              </div>
+
+              <!-- Final Total -->
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <span class="text-white text-uppercase font-heading">Total Amount Due</span>
+                <span class="fs-3 fw-bold font-heading text-warning" id="summary-total-price">$0</span>
+              </div>
+
+              <!-- Guarantee badges -->
+              <div class="p-3 rounded-3 text-muted small" style="background: rgba(255, 255, 255, 0.02);">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="fas fa-certificate text-warning"></i>
+                  <span>Full factory warranty and certification included.</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fas fa-truck text-warning"></i>
+                  <span>Tracked enclosed transporter delivery to your address.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- SUCCESSFUL PAYMENT RECEIPT (Displayed after payment completion) -->
+      <div id="receipt-container" class="d-none">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="receipt-card text-center p-4 p-md-5">
+              
+              <div class="mb-4">
+                <div class="d-inline-flex p-3 rounded-circle mb-3" style="background: rgba(16, 185, 129, 0.15); border: 2px solid #10b981;">
+                  <i class="fas fa-check fa-3x text-success"></i>
+                </div>
+                <span class="d-block text-uppercase text-success fw-bold letter-spacing-1 mb-1">Transaction Successful</span>
+                <h2 class="display-6 font-heading text-white fw-bold mb-2">Payment Confirmed & Secured</h2>
+                <p class="text-muted">Your supercar order has been finalized with our global concierge team.</p>
+              </div>
+
+              <!-- Receipt Box Details -->
+              <div class="p-4 rounded-3 text-start mb-4" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <small class="text-muted d-block">Order Reference</small>
+                    <strong class="text-warning font-monospace fs-5" id="receipt-order-id">APX-000000</strong>
+                  </div>
+                  <div class="col-md-6">
+                    <small class="text-muted d-block">Timestamp</small>
+                    <span class="text-white" id="receipt-date">Date</span>
+                  </div>
+                  <div class="col-md-6">
+                    <small class="text-muted d-block">Vehicle</small>
+                    <span class="text-white fw-bold" id="receipt-car-name">Supercar</span>
+                  </div>
+                  <div class="col-md-6">
+                    <small class="text-muted d-block">Brand & Exterior Color</small>
+                    <span class="text-white"><span id="receipt-brand">Brand</span> - <span id="receipt-color">Color</span></span>
+                  </div>
+                  <div class="col-md-6">
+                    <small class="text-muted d-block">Payment Method Used</small>
+                    <span class="text-success fw-bold" id="receipt-method">App Pocket Money</span>
+                  </div>
+                  <div class="col-md-6">
+                    <small class="text-muted d-block">Amount Charged</small>
+                    <strong class="text-warning font-heading fs-4" id="receipt-amount">$0</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <button onclick="window.print()" class="btn btn-apex-outline">
+                  <i class="fas fa-print me-2"></i> Print Official Receipt
+                </button>
+                <a href="store.html" class="btn btn-apex-gold">
+                  <i class="fas fa-car me-2"></i> Continue Exploring Supercars
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Processing Modal Spinner -->
+  <div class="modal fade" id="processingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content modal-apex-content text-center p-4">
+        <div class="spinner-border text-warning mb-3 mx-auto" style="width: 3.5rem; height: 3.5rem;" role="status"></div>
+        <h5 class="text-white font-heading mb-1">Authenticating...</h5>
+        <small class="text-muted">Simulating secure digital transfer</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="apex-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3">
+            <i class="fas fa-bolt brand-icon"></i>
+            <span>APEX <span class="apex">HYPERMOTORS</span></span>
+          </div>
+          <p class="small text-muted mb-3">
+            Simulated payment checkout demonstrating fake money balance deduction and receipt generation.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Pages (เมนู)</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Home (หน้าแรก)</a></li>
+            <li><a href="store.html" class="footer-link">Store (สินค้า)</a></li>
+            <li><a href="promotions.html" class="footer-link">Promotions (โปรโมชัน)</a></li>
+            <li><a href="order.html" class="footer-link">Order (สั่งซื้อ)</a></li>
+            <li><a href="payment.html" class="footer-link">Payment (ชำระเงิน)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Support</h6>
+          <ul class="list-unstyled small">
+            <li><a href="contact.html" class="footer-link">Contact Us (ติดต่อเรา)</a></li>
+            <li><a href="reviews.html" class="footer-link">Reviews (ความคิดเห็น)</a></li>
+            <li><a href="#" onclick="resetWalletBalance(); return false;" class="footer-link text-warning">Reset Fake Money</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-white font-heading text-uppercase mb-3">Homework Submission</h6>
+          <p class="small text-muted mb-1">Subject: Web Application Development</p>
+          <p class="small text-muted mb-1">Package: Assignment-MyJS-BT-Webpage</p>
+          <p class="small text-muted">Feature: Simulated $999,999,999,999,999 fake money wallet and Credit Card payment</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
+        &copy; 2026 Apex Hypermotors. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Data & Scripts -->
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Supercar | Apex Hypermotors</title>
+  <meta name="description" content="View supercar specifications, customize bespoke exterior coachwork, and order with instant fake pocket money or credit card.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg apex-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <i class="fas fa-bolt brand-icon"></i>
+        <span>APEX <span class="apex">HYPERMOTORS</span></span>
+      </a>
+
+      <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html"><i class="fas fa-car me-1"></i> Store (สินค้า)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="promotions.html"><i class="fas fa-tags me-1"></i> Promotions (โปรโมชัน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="order.html"><i class="fas fa-clipboard-list me-1"></i> Order (สั่งซื้อ)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html"><i class="fas fa-credit-card me-1"></i> Payment (การชำระเงิน)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-phone-alt me-1"></i> Contact (ติดต่อเรา)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html"><i class="fas fa-star me-1"></i> Reviews (ความคิดเห็น)</a>
+          </li>
+        </ul>
+
+        <!-- Fake Wallet Badge -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="payment.html" class="wallet-pill text-decoration-none">
+            <span class="wallet-dot"></span>
+            <i class="fas fa-wallet"></i>
+            <span id="navbar-wallet-amount">$999,999,999,999,999</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB & BACK BUTTON -->
+  <div class="container py-3">
+    <div class="d-flex align-items-center gap-2 text-muted small">
+      <a href="store.html" class="text-warning"><i class="fas fa-arrow-left me-1"></i> Back to Store</a>
+      <span>/</span>
+      <span>Supercar Order Atelier</span>
+    </div>
+  </div>
+
+  <!-- ORDER SHOWCASE MAIN SECTION -->
+  <main class="py-2">
+    <div class="container">
+      <div class="p-4 p-lg-5 rounded-4" style="background: var(--bg-card); border: 1px solid var(--border-subtle); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">
+        
+        <div class="row g-5 align-items-center">
+          
+          <!-- Car Visual Display -->
+          <div class="col-lg-7">
+            <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary border-opacity-25" style="min-height: 380px; background: #08090d;">
+              <span class="car-brand-badge fs-6 px-3 py-2" id="order-car-brand">Ferrari</span>
+              <span class="car-tag-badge fs-6 px-3 py-2" id="order-car-badge"><i class="fas fa-crown me-1"></i> Hypercar</span>
+              <img id="order-main-img" src="" alt="Supercar Image" class="w-100 h-100 object-fit-cover" style="min-height: 400px; max-height: 480px;">
+            </div>
+
+            <!-- Specs Grid -->
+            <div class="row g-3 mt-3 text-center">
+              <div class="col-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                  <small class="text-muted text-uppercase d-block mb-1">0-100 km/h</small>
+                  <strong class="text-white fs-5" id="spec-accel">2.5s</strong>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                  <small class="text-muted text-uppercase d-block mb-1">Top Speed</small>
+                  <strong class="text-white fs-5" id="spec-top-speed">340 km/h</strong>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);">
+                  <small class="text-muted text-uppercase d-block mb-1">Horsepower</small>
+                  <strong class="text-white fs-5" id="spec-hp">986 HP</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Car Order & Customization Details -->
+          <div class="col-lg-5">
+            <div class="mb-3">
+              <span class="promo-tag mb-2"><i class="fas fa-shield-alt"></i> Official Allocation Verified</span>
+              <h1 class="display-6 font-heading fw-bold text-white mb-2" id="order-car-name">Supercar Model</h1>
+              <p class="text-muted" id="order-car-desc" style="line-height: 1.6;">
+                Bespoke engineered supercar tailored for aerodynamic supremacy and sheer track dominance.
+              </p>
+            </div>
+
+            <!-- Powertrain summary -->
+            <div class="p-3 rounded-3 mb-4" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle);">
+              <div class="d-flex justify-content-between py-1 border-bottom border-secondary border-opacity-25 small">
+                <span class="text-muted">Powertrain:</span>
+                <span class="text-white fw-bold" id="spec-engine">Hybrid V8</span>
+              </div>
+              <div class="d-flex justify-content-between py-1 small">
+                <span class="text-muted">Transmission:</span>
+                <span class="text-white fw-bold" id="spec-transmission">Dual-Clutch</span>
+              </div>
+            </div>
+
+            <!-- Color Palette Preview -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="text-uppercase small fw-bold text-white"><i class="fas fa-palette text-warning me-2"></i>Exterior Coachwork</span>
+                <span class="small text-warning" id="order-selected-color-label">Select Color</span>
+              </div>
+              <div class="d-flex gap-3" id="order-color-swatches">
+                <!-- Injected via order.js -->
+              </div>
+            </div>
+
+            <!-- Price & Order Pop-up Window Trigger (Requirement: When user click to order window must pop up) -->
+            <div class="pt-4 border-top border-secondary border-opacity-25">
+              <div class="d-flex justify-content-between align-items-baseline mb-3">
+                <span class="text-muted text-uppercase small">MSRP Total</span>
+                <div class="display-6 font-heading text-warning fw-bold" id="order-car-price">$0</div>
+              </div>
+
+              <!-- Order Button Opening Modal Popup -->
+              <button id="order-trigger-modal-btn" class="btn btn-apex-gold btn-lg w-100 py-3 fs-5">
+                <i class="fas fa-bolt me-2"></i> Click to Order (Pop-up Window)
+              </button>
+
+              <div class="text-center mt-3 text-muted small">
+                <i class="fas fa-lock text-success me-1"></i> Instant payment with App Pocket Money or Credit Card
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RELATED SUPERCARS -->
+      <section class="mt-5 pt-3">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div>
+            <h3 class="font-heading text-white mb-1">More Exotic Supercars</h3>
+            <p class="text-muted small mb-0">Discover other high-performance machines in our collection.</p>
+          </div>
+          <a href="store.html" class="btn btn-sm btn-apex-outline">View Store <i class="fas fa-arrow-right ms-1"></i></a>
+        </div>
+        <div class="row g-4" id="related-cars-grid">
+          <!-- Injected via order.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="apex-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3">
+            <i class="fas fa-bolt brand-icon"></i>
+            <span>APEX <span class="apex">HYPERMOTORS</span></span>
+          </div>
+          <p class="small text-muted mb-3">
+            Bespoke order system with instant color customization and simulated pocket money checkout.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Pages (เมนู)</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Home (หน้าแรก)</a></li>
+            <li><a href="store.html" class="footer-link">Store (สินค้า)</a></li>
+            <li><a href="promotions.html" class="footer-link">Promotions (โปรโมชัน)</a></li>
+            <li><a href="order.html" class="footer-link">Order (สั่งซื้อ)</a></li>
+            <li><a href="payment.html" class="footer-link">Payment (ชำระเงิน)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white font-heading text-uppercase mb-3">Support</h6>
+          <ul class="list-unstyled small">
+            <li><a href="contact.html" class="footer-link">Contact Us (ติดต่อเรา)</a></li>
+            <li><a href="reviews.html" class="footer-link">Reviews (ความคิดเห็น)</a></li>
+            <li><a href="#" onclick="resetWalletBalance(); return false;" class="footer-link text-warning">Reset Fake Money</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="text-white font-heading text-uppercase mb-3">Homework Submission</h6>
+          <p class="small text-muted mb-1">Subject: Web Application Development</p>
+          <p class="small text-muted mb-1">Package: Assignment-MyJS-BT-Webpage</p>
+          <p class="small text-muted">Feature: Pop-up order modal with color picker & 2 payment methods</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
+        &copy; 2026 Apex Hypermotors. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Data & Scripts -->
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>
